@@ -32,17 +32,62 @@
     margin-top: 20px;
 }
 
-/* animación h1 */
+/* animation h1 */
 .panel-header h1 {
     animation: fadeIn 2s;
 }
 
-/* animación p */
+/* animation p */
 .panel-body p {
     animation: fadeIn 2s;
 }
 
-/* animación */
+/* objetives */
+.info {
+    background-color: #f8f9fa;
+    padding: 50px;
+    width: 100%;
+}
+
+.info-title {
+    color: #333;
+    font-size: 40px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.info-text {
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+}
+
+.circle {
+    background-color: aliceblue;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+}
+
+.circle i{
+    font-size: 70px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* animations */
 @keyframes fadeIn {
     0% {
         opacity: 0;
