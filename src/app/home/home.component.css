@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.panel-header{
+.panel-header {
     color: #333;
     padding: 10px;
     text-align: right;
@@ -16,19 +16,19 @@
     font-size: 50px;
 }
 
-.panel-body{
+.panel-body {
     color: #333;
     padding: 10px;
     text-align: right;
     margin-right: 210px;
     font-size: 25px;
-}   
+}
 
-.panel-header h1{
+.panel-header h1 {
     margin-top: 80px;
 }
 
-.panel-body p{
+.panel-body p {
     margin-top: 20px;
 }
 
@@ -76,9 +76,34 @@
     border-color: black;
 }
 
-.circle i{
+.circle i {
     font-size: 70px;
 }
+
+/* grid */
+.cars {
+    width: 100%;
+    display: grid;
+    place-items: center; /* Esto centra los elementos dentro del grid */
+}
+
+
+.grid-item {
+    float: left;
+    width: 400px;
+    height: 300px;
+    border: 2px solid hsla(0, 0%, 0%, 0.5); 
+}
+
+.grid-item--width2 {
+    width: 300px;
+}
+
+.grid-item--height2 {
+    height: 400px;
+}
+
+/* footer */
 
 footer {
     background-color: #333;
@@ -92,6 +117,7 @@ footer {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
