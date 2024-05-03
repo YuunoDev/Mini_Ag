@@ -1,3 +1,18 @@
-nav{
+nav {
     height: 130px;
+}
+
+/* CSS for name company */
+.namecompany {
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#pages{
+    width: 100%;
 }
