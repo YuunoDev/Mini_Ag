@@ -1,0 +1,42 @@
+div{
+    width: 800px; /* Ancho fijo */
+  /* Opcional: ajusta la altura según sea necesario */
+  height: auto; /* Altura automática */
+  margin: 20px auto; /* Márgenes superior e inferior de 20px y centrado horizontal */
+  padding: 20px; /* Relleno interno de 20px */
+}
+
+h2 {
+    color: #333; /* Color del texto del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    margin-bottom: 20px; /* Espacio inferior del encabezado */
+}
+
+p {
+    margin-bottom: 15px; /* Espacio inferior para cada párrafo */
+}
+
+span {
+    font-weight: bold; /* Hace que el texto dentro de <span> sea negrita */
+}
+
+input[type="text"],
+select {
+    width: 100%; /* Ajusta el ancho de los inputs y select al 100% del contenedor */
+    padding: 10px; /* Añade relleno interno a los inputs y select */
+    border: 1px solid #ccc; /* Agrega un borde a los inputs y select */
+    border-radius: 5px; /* Agrega esquinas redondeadas a los inputs y select */
+}
+
+button {
+    padding: 10px 20px; /* Añade relleno interno al botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 5px; /* Agrega esquinas redondeadas al botón */
+    background-color: #8eabc9; /* Establece un color de fondo para el botón */
+    color: #f54545; /* Color del texto del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+button:hover {
+    background-color: #2a00b3; /* Cambia el color de fondo cuando el cursor pasa sobre el botón */
+}
