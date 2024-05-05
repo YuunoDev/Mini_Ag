@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarsService } from '../cars.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  constructor(private carsService: CarsService) { }
 
 }

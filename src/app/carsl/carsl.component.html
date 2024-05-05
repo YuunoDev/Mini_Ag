@@ -1,0 +1,17 @@
+<h1 class="text-center">
+    Our Cars
+</h1>
+<div>
+    @for (c of ourCars; track c; let i = $index) {
+        <div class="card h-100">
+            <img src="{{c.img}}" alt="..." class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{c.name}}</h5>
+                <p class="card-text">{{c.description}}</p>
+                <p class="card-text"><small class="test-muted">{{c.pricerent}}</small></p>
+            </div>
+            <a [routerLink]="['/cars',i]" class="mb-3 btn btn-outline-primary btn-block">Rent</a>
+        </div>
+
+    }
+</div>
