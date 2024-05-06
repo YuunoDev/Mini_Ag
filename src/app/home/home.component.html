@@ -1,70 +1,113 @@
-<div class="panel">
-  <div class="panel-header">
-    <h1>Welcome to DiveRent</h1>
+<div class="home">
+  <div class="panel">
+    <div class="panel-header">
+      <h1>Welcome to DiveRent</h1>
+    </div>
+    <div class="panel-body">
+      <p>this is car rental website. You can rent a car from here</p>
+    </div>
   </div>
-  <div class="panel-body">
-    <p>this is car rental website. You can rent a car from here</p>
-  </div>
-</div>
 
-<div class="info">
-  <div class="container text-center">
-    <div class="row row-cols-2">
-      <div class="col-12">
-        <div class="p-3 info-title">DriveRent</div>
-      </div>
-      <div class="col-12">
-        <div class="p-3 info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam
-          facere deleniti, dicta tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex
-          neque sed atque voluptatum eum!</div>
+  <div class="info">
+    <div class="container text-center">
+      <div class="row row-cols-2">
+        <div class="col-12">
+          <div class="p-3 info-title">DriveRent</div>
+        </div>
+        <div class="col-12">
+          <div class="p-3 info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam
+            facere deleniti, dicta tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex
+            neque sed atque voluptatum eum!</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="objetives">
-  <div class="container text-center">
+  <div class="objetives">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <div class="circle">
+            <i class="fa-solid fa-user-shield" style="color: #37a484;"></i>
+          </div>
+          <div>
+            <p>Security</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
+              tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
+              voluptatum eum!
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="circle">
+            <i class="fa-solid fa-car" style="color: #37a484;"></i>
+          </div>
+          <div>
+            <p>Variety</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
+              tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
+              voluptatum eum!
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="circle">
+            <i class="fa-solid fa-credit-card" style="color: #37a484;"></i>
+          </div>
+          <div>
+            <p>Easy payment</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
+              tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
+              voluptatum eum!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- video -->
+  <div>
+    <h1 class="text-center">How it works</h1>
+    <div class="contenedor">
+      <iframe width="560" height="315" [src]="video |domseguro:'https://www.youtube.com/embed/'" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- tabla de carros -->
+  <div class="container">
+    <h1 class="text-center">Our Cars</h1>
     <div class="row">
       <div class="col">
-        <div class="circle">
-          <i class="fa-solid fa-user-shield" style="color: #37a484;"></i>
-        </div>
-        <div>
-          <p>Security</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
-            tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
-            voluptatum eum!
-          </p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="circle">
-          <i class="fa-solid fa-car" style="color: #37a484;"></i> 
-        </div>
-        <div>
-          <p>Variety</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
-            tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
-            voluptatum eum!
-          </p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="circle">
-          <i class="fa-solid fa-credit-card" style="color: #37a484;"></i>
-        </div>
-        <div>
-          <p>Easy payment</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur laboriosam facere deleniti, dicta
-            tempora eum totam reiciendis ullam. Quaerat qui vitae natus accusantium quibusdam ex neque sed atque
-            voluptatum eum!
-          </p>
-        </div>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Car</th>
+              <th>Model</th>
+              <th>Year</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (car of ourCars; track car; let i = $index) {
+            <tr>
+              <td>{{car.name}}</td>
+              <td>{{car.brand}}</td>
+              <td>{{car.year}}</td>
+              <td>$ {{car.pricerent}}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </div>
-
