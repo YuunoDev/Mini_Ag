@@ -22,4 +22,8 @@ export class CarsService {
     return this.cars.filter(car => car.name.toLowerCase().includes(search.toLowerCase()));
   }
 
+  getCarIndex(brand: string): number {
+    return this.cars.findIndex(car => car.brand === brand);
+  }
+
 }

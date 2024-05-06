@@ -27,3 +27,13 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+.btn{
+    background-color: #407863;
+    color: #fff;
+}
+
+.btn:hover{
+    background-color: #333;
+    color: #fff;
+}
