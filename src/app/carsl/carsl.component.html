@@ -1,6 +1,6 @@
 <div class="cars">
     <h1 class="text-center">
-        Our Cars
+        Nuestros Caros
     </h1>
     <div class="cards card-group row row-col-1 row-cols-lg-3 g-3">
         @for (c of ourCars; track c; let i = $index) {
@@ -12,7 +12,7 @@
                     <p class="card-text">{{c.year}}</p>
                     <p class="card-text"><small class="test-muted"> USD ${{c.pricerent}}</small></p>
                 </div>
-                <a [routerLink]="['/cars',i]" class="mb-3 btn btn-outline-primary btn-block">Rent</a>
+                <a [routerLink]="['/cars',i]" class="mb-3 btn btn-outline-primary btn-block">Renta</a>
             </div>
         </div>
         }
