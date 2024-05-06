@@ -1,3 +1,7 @@
+.home{
+    padding-bottom: 80px;
+}
+
 .panel {
     background-image: url('../../assets/images/panelc.jpg');
     background-repeat: no-repeat;
@@ -8,7 +12,7 @@
     position: relative;
 }
 
-.panel-header{
+.panel-header {
     color: #333;
     padding: 10px;
     text-align: right;
@@ -16,19 +20,19 @@
     font-size: 50px;
 }
 
-.panel-body{
+.panel-body {
     color: #333;
     padding: 10px;
     text-align: right;
     margin-right: 210px;
     font-size: 25px;
-}   
+}
 
-.panel-header h1{
+.panel-header h1 {
     margin-top: 80px;
 }
 
-.panel-body p{
+.panel-body p {
     margin-top: 20px;
 }
 
@@ -76,22 +80,51 @@
     border-color: black;
 }
 
-.circle i{
+.circle i {
     font-size: 70px;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* grid */
+.cars {
+    width: 100%;
+    display: grid;
+    place-items: center; /* Esto centra los elementos dentro del grid */
 }
+
+
+.grid-item {
+    float: left;
+    width: 400px;
+    height: 300px;
+    border: 2px solid hsla(0, 0%, 0%, 0.5); 
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.grid-item--width2 {
+    width: 300px;
+}
+
+.grid-item--height2 {
+    height: 400px;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+  }
+  
+  iframe {
+    border: 5px solid white; /* Añade un borde blanco al iframe */
+    border-radius: 10px; /* Hace que el borde del iframe sea redondeado */
+  }
 
 /* animations */
 @keyframes fadeIn {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }

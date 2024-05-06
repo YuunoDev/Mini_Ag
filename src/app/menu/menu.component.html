@@ -11,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" aria-current="page" routerLink="/cars" routerLinkActive="active">Carros</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -27,17 +27,28 @@
                         <li><a class="dropdown-item" href="#">Algo mas</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Deshabilitado</a>
-                </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <input class="form-control me-2" type="search" placeholder="busqueda por marca" aria-label="Search" #buscarTexto (keyup.enter)="buscarMarca(buscarTexto.value)"/>
+                <button class="btn" type="submit" (click)="buscarMarca(buscarTexto.value)">Buscar</button>
             </form>
         </div>
     </div>
 </nav>
-<!-- depues del nav -->
 
-<router-outlet></router-outlet>
+<router-outlet>
+
+</router-outlet>
+
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <p>DriveRent</p>
+            </div>
+            <div class="col">
+                <p>© 2021 DriveRent</p>
+            </div>
+        </div>
+    </div>
+</footer>

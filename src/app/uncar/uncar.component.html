@@ -1,0 +1,27 @@
+<div class="car row">
+    <div class="col md-3 text-center carimg">
+        <a [routerLink]="['/cars']" class="btn"><i class="fa-solid fa-left-long" style="color: #ffffff;"></i></a>
+        <img src="{{car.img}}" alt="Car Image">
+    </div>
+    <div class="col md-8 car-info">
+        <h2>{{car.name}}</h2>
+        <p class="car-brand">Marca: {{car.brand}}</p>
+        <p class="car-year">Año: {{car.year}}</p>
+        <p class="car-desc">Descripción: {{car.description}}</p>
+        <p class="car-price">USD ${{car.pricerent}}</p>
+        @if (car.isRented) {
+        <p style="font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: #9c0c0c;
+        margin-top: 10px;">Rentado</p>
+        <button class="rent-button" disabled>Rentar</button>
+        } @else if (car.isRented === false) {
+        <p style="font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: #0c9c0c;
+        margin-top: 10px;">Disponible</p>
+        <button class="rent-button">Rentar</button>
+        }
+
+    </div>
+</div>
