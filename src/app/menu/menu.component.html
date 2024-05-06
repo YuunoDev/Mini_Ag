@@ -11,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">contact</a>
+                    <a class="nav-link" aria-current="page" routerLink="/cars" routerLinkActive="active">Cars</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -38,6 +38,20 @@
         </div>
     </div>
 </nav>
-<!-- depues del nav -->
 
-<router-outlet></router-outlet>
+<router-outlet>
+
+</router-outlet>
+
+<footer>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <p>DriveRent</p>
+            </div>
+            <div class="col">
+                <p>© 2021 DriveRent</p>
+            </div>
+        </div>
+    </div>
+</footer>
