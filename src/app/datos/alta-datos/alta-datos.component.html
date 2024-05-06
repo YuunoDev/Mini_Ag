@@ -1,0 +1,55 @@
+<div>
+    <h2>Renta de Automóviles</h2>
+    <p>
+      <label>Fecha:</label>
+      <input type="date" [(ngModel)]="dato.fecha">
+    </p>
+    <p>
+      <label>Hora:</label>
+      <input type="time" [(ngModel)]="dato.hora">
+    </p>
+    <p>
+      <label>Nombre de quien reserva:</label>
+      <input type="text" [(ngModel)]="dato.nombre">
+    </p>
+    <p>
+      <label>Teléfono de quien reserva:</label>
+      <input type="tel" [(ngModel)]="dato.telefono">
+    </p>
+    <p>
+      <label>Correo de quien reserva:</label>
+      <input type="email" [(ngModel)]="dato.correo">
+    </p>
+    <p>
+      <label>Precio:</label>
+      <input type="number" [(ngModel)]="dato.precio">
+    </p>
+    <p>
+      <label>Modelo:</label>
+      <input type="text" [(ngModel)]="dato.modelo">
+    </p>
+    <p>
+      <label>Marca:</label>
+      <input type="text" [(ngModel)]="dato.marca">
+    </p>
+    <p>
+      <label>Año:</label>
+      <input type="number" [(ngModel)]="dato.anio">
+    </p>
+    <!-- <p>
+      <label>Imagen del carro:</label>
+      <input type="file" (change)="onFileSelected($event)">
+    </p> -->
+    <p>
+      <label>Total de días que lo necesita:</label>
+        <select [(ngModel)]="dato.dias" class="form-select" aria-label="Default select example">
+            @for (dias of dias; track dias) {
+                <option value="{{dias.id}}">{{dias.nombre}}</option>
+            }
+        </select>
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary" (click)="this.nuevoCliente()">Guardar</button>
+    </p>
+    
+  </div>

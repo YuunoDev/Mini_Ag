@@ -1,0 +1,37 @@
+#container2 {
+    width: 80%; /* Ajusta el ancho del contenedor según sea necesario */
+    margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+    padding: 20px; /* Añade espaciado interno al contenedor */
+    border: 1px solid #ccc; /* Agrega un borde al contenedor */
+    border-radius: 5px; /* Agrega esquinas redondeadas al contenedor */
+    background-color: #948383; /* Establece un color de fondo para el contenedor */
+}
+
+h2 {
+    color: #333; /* Color del texto del encabezado */
+    font-size: 24px; /* Tamaño de fuente del encabezado */
+    margin-bottom: 20px; /* Espacio inferior del encabezado */
+}
+
+div {
+    margin-bottom: 15px; /* Espacio inferior para cada div */
+}
+
+table {
+    width: 100%; /* Ajusta el ancho de la tabla al 100% del contenedor */
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+}
+
+th, td {
+    border: 1px solid #bbb6b6; /* Agrega un borde a las celdas */
+    padding: 8px; /* Añade relleno interno a las celdas */
+    text-align: left; /* Alinea el texto a la izquierda en las celdas */
+}
+
+th {
+    background-color: #7a7777; /* Establece un color de fondo para las celdas del encabezado */
+}
+
+tr:nth-child(even) {
+    background-color: #767373; /* Establece un color de fondo alternativo para filas pares */
+}
