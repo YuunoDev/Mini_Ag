@@ -9,7 +9,16 @@ body {
     
     
   }
-
+  h1 {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente según tus preferencias */
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    color: #FF5733; /* Color naranja brillante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    text-align: center; /* Centrado */
+    margin-bottom: 20px; /* Espacio inferior */
+    /* Otros estilos personalizados según tus preferencias */
+  }
 
   .masonry-with-flex {
     display: -webkit-box;
@@ -29,7 +38,7 @@ body {
   
   .masonry-with-flex div {
     width: auto;
-    background: #61b494;
+    background: transparent;
     color: white;
     margin: 0 1rem 1rem 0;
     text-align: center;
