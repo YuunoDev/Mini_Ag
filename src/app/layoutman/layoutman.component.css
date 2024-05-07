@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 1rem;
+  }
+  img{
+    
+    height: 150px;
+    line-height: 200px; 
+    
+    
+  }
+  h1 {
+    font-family: 'Arial', sans-serif; /* Cambia la fuente según tus preferencias */
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    color: #FF5733; /* Color naranja brillante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    text-align: center; /* Centrado */
+    margin-bottom: 20px; /* Espacio inferior */
+    /* Otros estilos personalizados según tus preferencias */
+  }
+
+  .masonry-with-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-height: 1000px;
+  }
+  
+  .masonry-with-flex div {
+    width: auto;
+    background: transparent;
+    color: white;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+  
+  .masonry-with-flex div:nth-child(1) {
+    height: 334px;
+    line-height: 334px;
+  }
+  
+  .masonry-with-flex div:nth-child(2) {
+    height: 428px;
+    line-height: 428px;
+  }
+  
+  .masonry-with-flex div:nth-child(3) {
+    height: 432px;
+    line-height: 432px;
+  }
+  
+  .masonry-with-flex div:nth-child(4) {
+    height: 292px;
+    line-height: 292px;
+  }
+  
+  .masonry-with-flex div:nth-child(5) {
+    height: 312px;
+    line-height: 312px;
+  }
+  
+  .masonry-with-flex div:nth-child(6) {
+    height: 191px;
+    line-height: 191px;
+  }
+  
+  .masonry-with-flex div:nth-child(7) {
+    height: 302px;
+    line-height: 302px;
+  }
+  
+  .masonry-with-flex div:nth-child(8) {
+    height: 224px;
+    line-height: 224px;
+  }
+  
+  .masonry-with-flex div:nth-child(9) {
+    height: 475px;
+    line-height: 475px;
+  }
+  
+  .masonry-with-flex div:nth-child(10) {
+    height: 440px;
+    line-height: 440px;
+  }
+  
+  .masonry-with-flex div:nth-child(11) {
+    height: 426px;
+    line-height: 426px;
+  }
+  
+  
+
+
+    
+
+    
+   
+ 
