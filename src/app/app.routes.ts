@@ -7,6 +7,7 @@ import { UsComponent } from './us/us.component';
 import { AltaDatosComponent } from './datos/alta-datos/alta-datos.component';
 import { ReporteCitasPreviasComponent } from './datos/reporte-citas-previas/reporte-citas-previas.component';
 import { ReporteCitasProximasComponent } from './datos/reporte-citas-proximas/reporte-citas-proximas.component';
+import { LayoutmanComponent } from './layoutman/layoutman.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'cars/:id', component: UncarComponent},
     { path: 'buscar', component: SearchComponent },
     { path: 'nosotros', component: UsComponent },
+    { path: 'marcas', component: LayoutmanComponent },
     { path: 'formulario', component: AltaDatosComponent},
     { path: 'citasPrevias', component: ReporteCitasPreviasComponent},
     { path: 'citasProximas', component: ReporteCitasProximasComponent},
