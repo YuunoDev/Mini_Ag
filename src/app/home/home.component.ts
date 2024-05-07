@@ -3,11 +3,12 @@ import { CarsService } from '../cars.service';
 import { DomseguroPipe } from '../domseguro.pipe';
 import { RouterOutlet } from '@angular/router';
 import { Car } from '../car';
+import { LayoutmanComponent } from '../layoutman/layoutman.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DomseguroPipe, RouterOutlet],
+  imports: [DomseguroPipe, RouterOutlet, LayoutmanComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
