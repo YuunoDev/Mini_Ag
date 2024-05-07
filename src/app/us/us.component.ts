@@ -19,25 +19,25 @@ export class UsComponent {
       name: 'Adrian Alonso Arambula',
       id: '322129',
       quote: 'Ayuda hijos de la...',
-      image: '../../assets/images/AAA.jpeg'
+      image: '/assets/images/AAA.jpeg'
     },
     {
       name: 'José Luis Ornelas Valadez',
       id: '262545',
       quote: 'XD',
-      image: '../../assets/images/JLOV.jpeg'
+      image: '/assets/images/JLOV.jpeg'
     },
     {
       name: 'Juan Rodolfo Aranda Cisneros',
       id: '290589',
       quote: 'Me dicen el comal porque caliento a las gorditas 🥴🥴',
-      image: '../../assets/images/JR.jpeg'
+      image: '/assets/images/JR.jpeg'
     },
     {
       name: 'Andrés Heredia BallIn',
       id: '226961',
       quote: 'Murió como vivió, con una increíble adicción al fentanilo',
-      image: '../../assets/images/AHB.jpeg'
+      image: '/assets/images/AHB.jpeg'
     }
   ];
 }
