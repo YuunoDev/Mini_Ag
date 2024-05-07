@@ -1,0 +1,43 @@
+<div>
+    <h2>Renta de Automóviles</h2>
+    <p>
+      <label>Fecha:</label>
+      <input type="date" [(ngModel)]="dato.fecha" min="2024-05-07" >
+    </p>
+    <p>
+      <label>Hora:</label>
+      <input type="time" [(ngModel)]="dato.hora">
+    </p>
+    <p>
+      <label>Nombre de quien reserva:</label>
+      <input type="text" [(ngModel)]="dato.nombre">
+    </p>
+    <p>
+      <label>Teléfono de quien reserva:</label>
+      <input type="tel" [(ngModel)]="dato.telefono">
+    </p>
+    <p>
+      
+      <label>Correo de quien reserva:</label>
+      <input type="email" [(ngModel)]="dato.correo">
+    </p>
+
+    <p>
+      <label>Total de días que lo necesita:</label>
+      <mat-form-field>
+        <mat-label>Escoja una opcion</mat-label>
+        <mat-select [(ngModel)]="dato.dias" [formControl]="selected" [errorStateMatcher]="matcher">
+          @for (dias of dias; track dias) {
+                <mat-option value="{{dias.id}}">{{dias.nombre}}</mat-option>
+            }
+        </mat-select>
+        @if (selected.hasError('required')) {
+          <mat-error>Tiene que elegir una opcion</mat-error>
+        }
+      </mat-form-field>
+    </p>
+    <p>
+      <button type="button" class="btn btn-primary" (click)="this.nuevoCliente()">Guardar</button>
+    </p>
+    
+  </div>

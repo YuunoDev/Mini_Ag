@@ -9,19 +9,23 @@
         <p class="car-year">Año: {{car.year}}</p>
         <p class="car-desc">Descripción: {{car.description}}</p>
         <p class="car-price">USD ${{car.pricerent}}</p>
+        <p>Numero Total de Citas: {{num}}</p>
         @if (car.isRented) {
         <p style="font-family: 'Poppins', sans-serif;
         font-size: 20px;
         color: #9c0c0c;
         margin-top: 10px;">Rentado</p>
-        <button class="rent-button" disabled>Rentar</button>
         } @else if (car.isRented === false) {
         <p style="font-family: 'Poppins', sans-serif;
         font-size: 20px;
         color: #0c9c0c;
         margin-top: 10px;">Disponible</p>
-        <button class="rent-button">Rentar</button>
         }
 
     </div>
 </div>
+
+<app-alta-datos [precio]="car.pricerent" [marca]="car.brand" [anio]="car.year" [modelo]="car.name" (propagar)="procesaPropagar($event)"></app-alta-datos>
+<app-reporte-datos></app-reporte-datos>
+
+

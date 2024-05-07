@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormularioComponent } from './formulario.component';
+import { DialogContenidoComponent } from './dialog-contenido.component';
 
-describe('FormularioComponent', () => {
-  let component: FormularioComponent;
-  let fixture: ComponentFixture<FormularioComponent>;
+describe('DialogContenidoComponent', () => {
+  let component: DialogContenidoComponent;
+  let fixture: ComponentFixture<DialogContenidoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormularioComponent]
+      imports: [DialogContenidoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(FormularioComponent);
+    fixture = TestBed.createComponent(DialogContenidoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
