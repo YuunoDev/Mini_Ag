@@ -4,24 +4,22 @@ import { CarsService } from '../cars.service';
 import { Car } from '../car';
 import { AltaDatosComponent } from '../datos/alta-datos/alta-datos.component';
 import { ReporteDatosComponent } from '../datos/reporte-datos/reporte-datos.component';
-import { ReporteCitasPreviasComponent } from '../datos/reporte-citas-previas/reporte-citas-previas.component';
-import { ReporteCitasProximasComponent } from '../datos/reporte-citas-proximas/reporte-citas-proximas.component';
 
 @Component({
   selector: 'app-uncar',
   standalone: true,
-  imports: [RouterModule, AltaDatosComponent,ReporteDatosComponent,ReporteCitasPreviasComponent,ReporteCitasProximasComponent],
+  imports: [RouterModule, AltaDatosComponent,ReporteDatosComponent],
   templateUrl: './uncar.component.html',
   styleUrl: './uncar.component.css'
 })
 export class UncarComponent {
   @Input() car!: Car;
   
-  msg:string="";
+  num:number=0;
 
 
-  procesaPropagar(mensaje:string){
-    this.msg=mensaje;
+  procesaPropagar(mensaje:number){
+    this.num=mensaje;
   }
 
   constructor(

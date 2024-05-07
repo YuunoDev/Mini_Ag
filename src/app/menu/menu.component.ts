@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule,RouterOutlet } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [ RouterModule, RouterOutlet, HomeComponent],
+  imports: [ RouterModule, RouterOutlet, HomeComponent, MatIconModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
