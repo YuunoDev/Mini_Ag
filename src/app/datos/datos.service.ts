@@ -38,7 +38,8 @@ export class DatosService {
       modelo: '',
       marca: '',
       anio:this.datos.length,
-      dias: ''
+      dias: '',
+      date: new Date()
     };
    }
 }

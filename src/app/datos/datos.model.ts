@@ -11,6 +11,7 @@ export interface Datos{
   anio: number;
 //   imagen: File | undefined;
   dias: string;
+  date: Date;
 }
 
 export interface Dias{

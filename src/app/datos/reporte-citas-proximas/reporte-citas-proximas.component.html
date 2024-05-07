@@ -1,0 +1,45 @@
+<div id="container2">
+    <h2>
+        Citas Proximas
+    </h2>
+    @if (!datos.length) {
+        <div>No hay clientes por el momento</div>
+    }
+    @else {
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Dias</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (datos of datos; track datos) {
+                        <tr *ngIf="datos.date>hoy">
+                            <td>{{datos.fecha}}</td>
+                            <td>{{datos.hora}}</td>
+                            <td>{{datos.nombre}}</td>
+                            <td>{{datos.telefono}}</td>
+                            <td>{{datos.correo}}</td>
+                            <td>{{datos.precio}}</td>
+                            <td>{{datos.modelo}}</td>
+                            <td>{{datos.marca}}</td>
+                            <td>{{datos.anio}}</td>
+                            <td>{{datos.dias}}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
