@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 1rem;
+  }
+  img{
+    
+    height: 150px;
+    line-height: 200px; 
+    
+    
+  }
+
+
+  .masonry-with-flex {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-height: 1000px;
+  }
+  
+  .masonry-with-flex div {
+    width: auto;
+    background: #61b494;
+    color: white;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+  
+  .masonry-with-flex div:nth-child(1) {
+    height: 334px;
+    line-height: 334px;
+  }
+  
+  .masonry-with-flex div:nth-child(2) {
+    height: 428px;
+    line-height: 428px;
+  }
+  
+  .masonry-with-flex div:nth-child(3) {
+    height: 432px;
+    line-height: 432px;
+  }
+  
+  .masonry-with-flex div:nth-child(4) {
+    height: 292px;
+    line-height: 292px;
+  }
+  
+  .masonry-with-flex div:nth-child(5) {
+    height: 312px;
+    line-height: 312px;
+  }
+  
+  .masonry-with-flex div:nth-child(6) {
+    height: 191px;
+    line-height: 191px;
+  }
+  
+  .masonry-with-flex div:nth-child(7) {
+    height: 302px;
+    line-height: 302px;
+  }
+  
+  .masonry-with-flex div:nth-child(8) {
+    height: 224px;
+    line-height: 224px;
+  }
+  
+  .masonry-with-flex div:nth-child(9) {
+    height: 475px;
+    line-height: 475px;
+  }
+  
+  .masonry-with-flex div:nth-child(10) {
+    height: 440px;
+    line-height: 440px;
+  }
+  
+  .masonry-with-flex div:nth-child(11) {
+    height: 426px;
+    line-height: 426px;
+  }
+  
+  
+
+
+    
+
+    
+   
+ 
