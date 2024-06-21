@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPhoneNumber, RecaptchaVerifier, authState} from '@angular/fire/auth';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, deleteDoc,addDoc, doc, collection, collectionData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { user } from './user.interface';
 import { Datos } from './datos/datos.model';
@@ -77,5 +77,10 @@ export class UserService {
   getCitas(){
     const citasRef = collection(this.firestore, 'citas');
     return collectionData(citasRef, { idField: 'id' }) as Observable<Datos[]>;
+  }
+  
+  deleteCita(dato: Datos) {
+    const placeDocRef = doc(this.firestore, `citas/${dato.id}`);
+    return deleteDoc(placeDocRef);
   }
 }

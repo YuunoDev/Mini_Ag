@@ -9,6 +9,7 @@ import { ReporteCitasPreviasComponent } from './datos/reporte-citas-previas/repo
 import { ReporteCitasProximasComponent } from './datos/reporte-citas-proximas/reporte-citas-proximas.component';
 import { LayoutmanComponent } from './layoutman/layoutman.component';
 import { LoginComponent } from './componentesUser/login/login.component';
+import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consulta-citas.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,6 +23,7 @@ export const routes: Routes = [
     { path: 'citasPrevias', component: ReporteCitasPreviasComponent},
     { path: 'citasProximas', component: ReporteCitasProximasComponent},
     { path: 'login', component: LoginComponent},
+    { path: 'citas', component: ConsultaCitasComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];
