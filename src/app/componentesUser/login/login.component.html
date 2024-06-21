@@ -1,0 +1,14 @@
+<div class="formulario">
+    <h2>Login por Usuario y Contraseña</h2>
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="pass">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+</div>

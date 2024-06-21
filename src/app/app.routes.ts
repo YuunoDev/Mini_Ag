@@ -8,6 +8,7 @@ import { AltaDatosComponent } from './datos/alta-datos/alta-datos.component';
 import { ReporteCitasPreviasComponent } from './datos/reporte-citas-previas/reporte-citas-previas.component';
 import { ReporteCitasProximasComponent } from './datos/reporte-citas-proximas/reporte-citas-proximas.component';
 import { LayoutmanComponent } from './layoutman/layoutman.component';
+import { LoginComponent } from './componentesUser/login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'formulario', component: AltaDatosComponent},
     { path: 'citasPrevias', component: ReporteCitasPreviasComponent},
     { path: 'citasProximas', component: ReporteCitasProximasComponent},
+    { path: 'login', component: LoginComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];

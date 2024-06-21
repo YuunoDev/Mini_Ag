@@ -32,6 +32,23 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
                 </li>
+                
+                <li class="nav-item dropdown" *ngIf="this.loggedIn; else buttonLogin">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{this.cuenta}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a class="nav-link active" aria-current="page" (click)="logout()" routerLink="/home" routerLinkActive="active">Logout</a>
+                    </ul>
+                </li>
+                               
+                <ng-template #buttonLogin>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active">Login</a>
+                    </li>
+                </ng-template>
+                
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="busqueda por marca" aria-label="Search" #buscarTexto (keyup.enter)="buscarMarca(buscarTexto.value)"/>

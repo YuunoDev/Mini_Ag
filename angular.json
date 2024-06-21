@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Mini_Ag": {
+    "miniag": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Mini_Ag:build:production"
+              "buildTarget": "miniag:build:production"
             },
             "development": {
-              "buildTarget": "Mini_Ag:build:development"
+              "buildTarget": "miniag:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Mini_Ag:build"
+            "buildTarget": "miniag:build"
           }
         },
         "test": {

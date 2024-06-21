@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroupDirective,
+  FormGroup,
   NgForm,
   Validators,
   FormsModule,
@@ -20,6 +21,9 @@ import {
 import {MatButtonModule} from '@angular/material/button';
 import { DialogContenidoComponent } from './dialog-contenido/dialog-contenido.component';
 import { DialogErrorComponent } from './dialog-error/dialog-error.component';
+import { UserService } from '../../user.service';
+import { DatePipe } from '@angular/common';
+
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -32,19 +36,23 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 @Component({
   selector: 'app-alta-datos',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatInputModule, MatButtonModule],
+  imports: [MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, 
+    MatInputModule, MatButtonModule, ReactiveFormsModule, DatePipe],
   templateUrl: './alta-datos.component.html',
   styleUrl: './alta-datos.component.css'
 })
 
 
-export class AltaDatosComponent {
+export class AltaDatosComponent implements OnInit
+{
   dato!: Datos;
   dias!: Dias[];
   datos!: Datos[];
   numCitas: number=0;
-  
 
+  currentDate = new Date();
+  
+  formCita : FormGroup;
   
   @Input() marca: string='';
   @Input() anio: number=0;
@@ -58,7 +66,16 @@ export class AltaDatosComponent {
     this.propagar.emit(this.numCitas);
   }
 
-  constructor(private datosService: DatosService, public dialog: MatDialog){}
+  constructor(private userService: UserService ,private datosService: DatosService, public dialog: MatDialog){
+    this.formCita = new FormGroup({
+      fecha: new FormControl(),
+      hora: new FormControl(),
+      nombre: new FormControl(),
+      telefono: new FormControl(),
+      correo: new FormControl(),
+      dias: new FormControl()
+    })
+  }
 
   openDialog() {
     if (this.checkArray()==true) {
@@ -70,8 +87,8 @@ export class AltaDatosComponent {
   }
 
   checkArray(){
-    if (this.dato.anio!=0 && this.dato.correo!='' && this.dato.dias!='' && this.dato.fecha!='' && this.dato.hora!='' &&
-        this.dato.telefono!='') {
+    if (this.dato.anio!=null && this.dato.correo!=null && this.dato.dias!=null && this.dato.fecha!=null && this.dato.hora!=null &&
+        this.dato.telefono!=null) {
       return true;
     }else{
       return false;
@@ -93,13 +110,37 @@ export class AltaDatosComponent {
     })
     this.onPropagar();
   }
-  nuevoCliente():void{
-    this.openDialog();
-    if (this.checkArray()==true) {
-      this.datosService.agregarDatos(this.dato);
+
+  async onSubmit(){
+    this.dato.anio=this.anio;
+    this.dato.marca=this.marca;
+    this.dato.modelo=this.modelo;
+    this.dato.precio=this.precio;
+    this.dato.fecha = this.formCita.value.fecha
+    this.dato.hora = this.formCita.value.hora
+    this.dato.nombre = this.formCita.value.nombre
+    this.dato.telefono = this.formCita.value.telefono
+    this.dato.correo = this.formCita.value.correo
+    this.dato.dias = this.formCita.value.dias
+    this.openDialog()
+    console.log(this.formCita.value.dias)
+    if(!this.checkArray()){
+      return
     }
-    this.dato = this.datosService.nuevoCliente();
+    const response = await this.userService.addCita(this.dato)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => console.log(error));
   }
+
+  // nuevoCliente():void{
+  //   this.openDialog();
+  //   if (this.checkArray()==true) {
+  //     this.datosService.agregarDatos(this.dato);
+  //   }
+  //   this.dato = this.datosService.nuevoCliente();
+  // }
 
   selected = new FormControl('valid', [Validators.required]);
 
