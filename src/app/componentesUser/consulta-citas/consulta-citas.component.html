@@ -15,6 +15,7 @@
                 <th scope="col">Marca</th>
                 <th scope="col">Año</th>
                 <th scope="col">Dias</th>
+                <th scope="col">Cancelar Cita</th>
               </tr>
             </thead>
             <tbody>
@@ -30,6 +31,7 @@
                         <td>{{datos.marca}}</td>
                         <td>{{datos.anio}}</td>
                         <td>{{datos.dias}}</td>
+                        <td><button (click)="borrar(datos)">Cancelar cita</button></td>
                     </ng-container>
                 </tr>
             </tbody>

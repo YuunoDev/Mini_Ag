@@ -26,4 +26,8 @@ export class ConsultaCitasComponent {
       this.datos = datos;
     })
   }
+
+  borrar(dato: Datos){
+    this.userService.deleteCita(dato);
+  }
 }
