@@ -3,6 +3,7 @@ import { AbstractControl, AbstractControlOptions, FormControl, FormGroup, Reacti
 import { UserService } from '../../user.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-registro',
@@ -14,8 +15,9 @@ import { CommonModule } from '@angular/common';
 export class RegistroComponent {
   formReg : FormGroup;
 
-  constructor(private userService: UserService){
+  constructor(private userService: UserService, private toastr: ToastrService){
     this.formReg = new FormGroup({
+      nombre: new FormControl('', Validators.required),
       cuenta: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       pass: new FormControl('', Validators.required),
@@ -28,10 +30,12 @@ export class RegistroComponent {
   }
 
   async onSubmit(){
-    this.userService.register(this.formReg.value)
+    this.userService.register(this.formReg.value);
+    console.log('Enviado');
     const response = await this.userService.addUser(this.formReg.value)
     .then(response => {
       console.log(response);
+      this.toastr.success('Usuario Creado con Exito');
     })
     .catch(error => console.log(error));
   }
