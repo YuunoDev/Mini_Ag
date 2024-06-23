@@ -11,6 +11,7 @@ import { LayoutmanComponent } from './layoutman/layoutman.component';
 import { LoginComponent } from './componentesUser/login/login.component';
 import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consulta-citas.component';
 import { RegistroComponent } from './componentesUser/registro/registro.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -26,6 +27,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'citas', component: ConsultaCitasComponent},
     { path: 'registro', component: RegistroComponent},
+    { path: 'contacto', component: ContactoComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];

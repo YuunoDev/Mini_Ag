@@ -1,0 +1,11 @@
+<form [formGroup]="formCont" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="mensaje"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
