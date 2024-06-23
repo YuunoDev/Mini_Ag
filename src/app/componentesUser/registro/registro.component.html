@@ -21,7 +21,7 @@
             <input type="password" class="form-control" formControlName="pass2">
             <p class="text-danger" *ngIf="formReg.errors?.['passwordmatcherror']">La contraseña no concuerda</p>
         </div>
-        <input type="submit" value="Enviar">
+        <input type="submit" [disabled]="formReg.errors || formReg.controls['cuenta'].errors || formReg.controls['email'].errors || formReg.controls['pass'].errors" value="Enviar">
     </form>
 </div>
 <br>
