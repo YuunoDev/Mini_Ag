@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, AbstractControlOptions, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -19,8 +19,8 @@ export class RegistroComponent {
       cuenta: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       pass: new FormControl('', Validators.required),
-      pass2: new FormControl('', )
-    })
+      pass2: new FormControl('', [this.PasswordValidator])
+    }, {validators:this.PasswordValidator} as  AbstractControlOptions)
   }
 
   ngOnInit(): void {
@@ -34,5 +34,16 @@ export class RegistroComponent {
       console.log(response);
     })
     .catch(error => console.log(error));
+  }
+
+  PasswordValidator:  ValidatorFn  = (control:AbstractControl):  ValidationErrors|  null  =>{
+    const  password  =  control.get('pass');
+    const  confirmpassword  =  control.get('pass2');
+    if(password  &&  confirmpassword  &&  password.value  !=  confirmpassword.value){
+      return {
+        passwordmatcherror :  true
+      }
+    }
+    return  null;
   }
 }
