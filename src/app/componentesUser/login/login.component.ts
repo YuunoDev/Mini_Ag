@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../../user.service';
 import { Auth } from '@angular/fire/auth';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit{
 
   formLogin: FormGroup;
 
-  constructor(private userService:UserService, private auth:Auth, private router:Router){
+  constructor(private userService:UserService, private auth:Auth, private router:Router, private toastr: ToastrService){
     this.formLogin = new FormGroup({
       email: new FormControl(),
       pass: new FormControl(), 
@@ -39,8 +40,12 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('userId', response.user.email)
       }
       location.reload();
+      this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
     })
-    .catch(error => console.log(error));
+    .catch(error => {
+      console.log(error);
+      this.toastr.error('Correo o contraseña incorrectos', 'Error');
+    });
   }
 
 }

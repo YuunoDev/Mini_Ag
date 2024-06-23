@@ -10,6 +10,7 @@ import { ReporteCitasProximasComponent } from './datos/reporte-citas-proximas/re
 import { LayoutmanComponent } from './layoutman/layoutman.component';
 import { LoginComponent } from './componentesUser/login/login.component';
 import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consulta-citas.component';
+import { RegistroComponent } from './componentesUser/registro/registro.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ export const routes: Routes = [
     { path: 'citasProximas', component: ReporteCitasProximasComponent},
     { path: 'login', component: LoginComponent},
     { path: 'citas', component: ConsultaCitasComponent},
+    { path: 'registro', component: RegistroComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];
