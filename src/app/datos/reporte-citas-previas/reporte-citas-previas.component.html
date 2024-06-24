@@ -1,4 +1,4 @@
-<div id="container2" style="margin-top: 80px;">
+<div id="container2" style="margin-top: 40px;">
     <h2>
         Citas Anteriores
     </h2>
@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     @for (datos of datos; track datos) {
-                        <tr *ngIf="datos.date<hoy">
+                        <tr *ngIf="datos.date < this.hoy ">
                             <td>{{datos.fecha}}</td>
                             <td>{{datos.hora}}</td>
                             <td>{{datos.nombre}}</td>

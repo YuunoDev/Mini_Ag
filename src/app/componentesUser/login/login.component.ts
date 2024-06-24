@@ -46,9 +46,9 @@ export class LoginComponent implements OnInit{
         localStorage.setItem('userId', response.user.email)
         console.log(localStorage.getItem('userId'))
         for(let user of this.users){
-          console.log(user.correo)
+          console.log(user.email)
           
-          if (user.correo == localStorage.getItem('userId')) {
+          if (user.email == localStorage.getItem('userId')) {
             console.log('Dentro del if')
             if (user.isAdmin == true) {
               localStorage.setItem('admin', 'true');

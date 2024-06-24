@@ -1,7 +1,8 @@
 export interface user{
     id?: string;
     nombre: string;
-    correo: string;
+    email: string;
+    cuenta: string;
     pass: string;
     telefono: string;
     isAdmin: boolean;

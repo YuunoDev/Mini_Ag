@@ -1,3 +1,5 @@
+import { Timestamp } from "@angular/fire/firestore";
+
 export interface Datos{
   id: number;
   fecha: string;
@@ -10,7 +12,7 @@ export interface Datos{
   marca: string;
   anio: number;
   dias: string;
-  date: Date;
+  date: Timestamp;
 }
 
 export interface Dias{

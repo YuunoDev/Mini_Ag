@@ -24,6 +24,7 @@ import { DialogErrorComponent } from './dialog-error/dialog-error.component';
 import { UserService } from '../../user.service';
 import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { Timestamp } from '@angular/fire/firestore';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -118,6 +119,9 @@ export class AltaDatosComponent implements OnInit
     this.dato.modelo=this.modelo;
     this.dato.precio=this.precio;
     this.dato.fecha = this.formCita.value.fecha
+    let fecha = new Date(this.formCita.value.fecha)
+    fecha.setDate(this.formCita.value.fecha + 1)
+    this.dato.date = Timestamp.fromDate(fecha)
     this.dato.hora = this.formCita.value.hora
     this.dato.nombre = this.formCita.value.nombre
     this.dato.telefono = this.formCita.value.telefono
@@ -131,21 +135,27 @@ export class AltaDatosComponent implements OnInit
     const response = await this.userService.addCita(this.dato)
     .then(response => {
       console.log(response);
+      const correoCita = {
+        asunto: 'Datos de tu Cita', 
+        mensaje: 'Marca: ' + this.marca + "\n"
+               + 'Modelo: ' + this.modelo + "\n"
+               + 'Año: ' + this.anio + "\n"
+               + 'Fecha: ' + this.dato.fecha + "\n"
+               + 'Hora: ' + this.dato.hora + "\n"
+               + 'Dias de renta: ' + this.dato.dias + "\n"
+               + 'A nombre de: ' + this.dato.nombre + "\n"
+               + 'Total de la renta: ' + (this.precio*parseInt(this.dato.dias)) + " dolares",
+        correo: this.dato.correo
+      }
+      this.http.post('http://localhost:3000/cita', correoCita)
+      .subscribe(response => {
+        console.log('Correo enviado', response);
+      }, error => {
+        console.log('Error al enviar el correo', error);
+      });
     })
     .catch(error => console.log(error));
-    const correoCita = {
-      asunto: 'Datos de tu Cita', 
-      mensaje: 'Marca: ' + this.marca + "\n"
-             + 'Modelo: ' + this.modelo + "\n"
-             + 'Año: ' + this.anio + "\n"
-             + 'Fecha: ' + this.dato.fecha + "\n"
-             + 'Hora: ' + this.dato.hora + "\n"
-             + 'Dias de renta: ' + this.dato.dias + "\n"
-             + 'A nombre de: ' + this.dato.nombre + "\n"
-             + 'Total de la renta: ' + (this.precio*parseInt(this.dato.dias)) + " dolares",
-      correo: this.dato.correo
-    }
-    this.http.post('http://localhost:3000/cita', correoCita);
+    
   }
 
   // nuevoCliente():void{

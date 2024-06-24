@@ -1,1 +1,10 @@
-<p>admin works!</p>
+<div class="btn-group" role="group" aria-label="Basic example" style="margin-left: 33%; margin-top: 3%;">
+    <button type="button" class="btn btn-primary" (click)="onPrevias()">Citas Previas</button>
+    <button type="button" class="btn btn-primary" (click)="onProximas()">Citas Proximas</button>
+    <button type="button" class="btn btn-primary" (click)="onUsuarios()">Usuarios</button>
+    <button type="button" class="btn btn-primary" (click)="onEstadisticas()">Estadisticas</button>
+</div>
+
+<app-reporte-citas-previas *ngIf="this.pagina=='previas'"></app-reporte-citas-previas>
+<app-reporte-citas-proximas *ngIf="this.pagina=='proximas'"></app-reporte-citas-proximas>
+<app-reporte-usuarios *ngIf="this.pagina=='usuarios'"></app-reporte-usuarios>
