@@ -13,6 +13,7 @@ import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consult
 import { RegistroComponent } from './componentesUser/registro/registro.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginTelefonoComponent } from './componentesUser/login-telefono/login-telefono.component';
+import { AdminComponent } from './componentesUser/admin/admin.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -30,6 +31,7 @@ export const routes: Routes = [
     { path: 'registro', component: RegistroComponent},
     { path: 'contacto', component: ContactoComponent},
     { path: 'telefono', component: LoginTelefonoComponent},
+    { path: 'admin', component: AdminComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];

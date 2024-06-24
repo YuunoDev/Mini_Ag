@@ -69,6 +69,10 @@ export class UserService {
     return !!localStorage.getItem('userId');
   }
 
+  isAdmin(){
+    return !!localStorage.getItem('admin');
+  }
+
   addCita(dato:Datos){
     const citasRef = collection(this.firestore, 'citas');
     return addDoc(citasRef, dato);

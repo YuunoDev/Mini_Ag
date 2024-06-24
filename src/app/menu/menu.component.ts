@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 export class MenuComponent implements OnInit{
   
   loggedIn:boolean = this.userService.isLoggedIn();
+  admin:boolean = this.userService.isAdmin();
   cuenta:any;
 
   constructor(private router: Router, public userService: UserService ) {
@@ -24,6 +25,7 @@ export class MenuComponent implements OnInit{
 
   ngOnInit(): void {
     console.log(this.cuenta)
+    console.log(this.admin)
   } 
 
   buscarMarca(marca: string) {
@@ -36,6 +38,7 @@ export class MenuComponent implements OnInit{
   logout(){
     this.userService.logOut();
     localStorage.removeItem('userId');
+    localStorage.removeItem('admin')
     location.reload();
   }
 }
