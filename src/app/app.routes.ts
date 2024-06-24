@@ -12,6 +12,7 @@ import { LoginComponent } from './componentesUser/login/login.component';
 import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consulta-citas.component';
 import { RegistroComponent } from './componentesUser/registro/registro.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { LoginTelefonoComponent } from './componentesUser/login-telefono/login-telefono.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,6 +29,7 @@ export const routes: Routes = [
     { path: 'citas', component: ConsultaCitasComponent},
     { path: 'registro', component: RegistroComponent},
     { path: 'contacto', component: ContactoComponent},
+    { path: 'telefono', component: LoginTelefonoComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 
 ];
