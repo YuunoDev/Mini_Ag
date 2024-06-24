@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Generador de Código QR</h1>
+    <button (click)="generateRandomData()">Generar QR</button>
+    <br>
+    <div *ngIf="qrData">
+      <qrcode [qrdata]="qrData" [width]="256"></qrcode>
+      <p>Disfruten del QR GENERATOR >:D</p> 
+    </div>
+  </div>

@@ -10,6 +10,7 @@ import { ReporteCitasProximasComponent } from './datos/reporte-citas-proximas/re
 import { LayoutmanComponent } from './layoutman/layoutman.component';
 import { LoginComponent } from './componentesUser/login/login.component';
 import { ConsultaCitasComponent } from './componentesUser/consulta-citas/consulta-citas.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,5 +26,12 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'citas', component: ConsultaCitasComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
-
 ];
+
+@NgModule({
+    declarations: [AppComponent, BarChartComponent],
+    imports: [RouterModule, BrowserModule],
+    exports: [RouterModule],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
