@@ -23,13 +23,8 @@ export class ContactoComponent {
 
    async onSubmit(){
     console.log('Submit llamado')
-      this.http.post('http://localhost:3000/correo', this.formCont.value)
-      .subscribe(response => {
-        console.log('Correo enviado', response);
-      }, error => {
-        console.log('Error al enviar el correo', error);
-      });
-      this.toastr.success('Su correo sera respondido en los proximos dias', 'Mensaje Enviado');
+    this.http.post('http://localhost:3000/contacto', this.formCont.value);
+    this.toastr.success('Su correo sera respondido en los proximos dias', 'Mensaje Enviado');
   }
 }
 

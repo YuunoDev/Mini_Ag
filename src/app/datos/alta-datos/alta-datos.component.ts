@@ -23,6 +23,7 @@ import { DialogContenidoComponent } from './dialog-contenido/dialog-contenido.co
 import { DialogErrorComponent } from './dialog-error/dialog-error.component';
 import { UserService } from '../../user.service';
 import { DatePipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -66,7 +67,7 @@ export class AltaDatosComponent implements OnInit
     this.propagar.emit(this.numCitas);
   }
 
-  constructor(private userService: UserService ,private datosService: DatosService, public dialog: MatDialog){
+  constructor(private userService: UserService ,private datosService: DatosService, public dialog: MatDialog, private http: HttpClient){
     this.formCita = new FormGroup({
       fecha: new FormControl(),
       hora: new FormControl(),
@@ -132,6 +133,19 @@ export class AltaDatosComponent implements OnInit
       console.log(response);
     })
     .catch(error => console.log(error));
+    const correoCita = {
+      asunto: 'Datos de tu Cita', 
+      mensaje: 'Marca: ' + this.marca + "\n"
+             + 'Modelo: ' + this.modelo + "\n"
+             + 'Año: ' + this.anio + "\n"
+             + 'Fecha: ' + this.dato.fecha + "\n"
+             + 'Hora: ' + this.dato.hora + "\n"
+             + 'Dias de renta: ' + this.dato.dias + "\n"
+             + 'A nombre de: ' + this.dato.nombre + "\n"
+             + 'Total de la renta: ' + (this.precio*parseInt(this.dato.dias)) + " dolares",
+      correo: this.dato.correo
+    }
+    this.http.post('http://localhost:3000/cita', correoCita);
   }
 
   // nuevoCliente():void{
