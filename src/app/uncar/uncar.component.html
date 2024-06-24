@@ -9,23 +9,8 @@
         <p class="car-year">Año: {{car.year}}</p>
         <p class="car-desc">Descripción: {{car.description}}</p>
         <p class="car-price">USD ${{car.pricerent}}</p>
-        <p>Numero Total de Citas: {{num}}</p>
-        @if (car.isRented) {
-        <p style="font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        color: #9c0c0c;
-        margin-top: 10px;">Rentado</p>
-        } @else if (car.isRented === false) {
-        <p style="font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        color: #0c9c0c;
-        margin-top: 10px;">Disponible</p>
-        }
-
     </div>
+    <h3 *ngIf="!this.loggedIn" style="color: rgb(175, 0, 0); text-align: center;">Renta solo disponible para usuarios logueados</h3>
 </div>
-
-<app-alta-datos [precio]="car.pricerent" [marca]="car.brand" [anio]="car.year" [modelo]="car.name" (propagar)="procesaPropagar($event)"></app-alta-datos>
-<app-reporte-datos></app-reporte-datos>
-
+<app-alta-datos *ngIf="this.loggedIn" [precio]="car.pricerent" [marca]="car.brand" [anio]="car.year" [modelo]="car.name" (propagar)="procesaPropagar($event)"></app-alta-datos>
 
