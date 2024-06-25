@@ -2,7 +2,7 @@
     <h1 class="text-center">
         Nuestros Carros
     </h1>
-    <div class="cards card-group row row-col-1 row-cols-lg-3 g-3">
+    <div class="cards card-group row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
         @for (c of ourCars; track c; let i = $index) {
         <div class="col">
             <div class="card h-100">
@@ -10,9 +10,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{c.name}}</h5>
                     <p class="card-text">{{c.year}}</p>
-                    <p class="card-text"><small class="test-muted"> USD ${{c.pricerent}}</small></p>
+                    <p class="card-text"><small class="text-muted">USD ${{c.pricerent}}</small></p>
                 </div>
-                <button [routerLink]="['/cars',i]" class="mb-3 btn btn-success ">Renta</button>
+                <button [routerLink]="['/cars',i]" class="mb-3 btn btn-success">Renta</button>
             </div>
         </div>
         }
