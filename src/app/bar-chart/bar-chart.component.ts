@@ -9,7 +9,7 @@ import Chart, { ChartType } from 'chart.js/auto';
 export class BarChartComponent implements OnInit {
 
   // Atributo que almacena los datos del chart
-  public chart: Chart;
+  public chart?: Chart;
   public tableData: { consola: string, value: number }[] = [];
 
   ngOnInit(): void {

@@ -5,6 +5,8 @@ import { user } from '../../user.interface';
 import { Auth } from '@angular/fire/auth';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit{
   formLogin: FormGroup;
   users!: user[] ;
 
-  constructor(private userService:UserService, private auth:Auth, private router:Router, private toastr: ToastrService){
+  constructor(private userService:UserService, private auth:Auth, private router:Router, private toastr: ToastrService, private http: HttpClient){
     this.formLogin = new FormGroup({
       email: new FormControl(),
       pass: new FormControl(), 
@@ -48,8 +50,14 @@ export class LoginComponent implements OnInit{
         for(let user of this.users){
           console.log(user.email)
           if (user.email == localStorage.getItem('userId')) {
-            console.log(user.id)
-            localStorage.setItem('descuento',user.id)
+            const email = {
+              correo: user.email
+            }
+            this.http.post('http://localhost:3000/database', email)
+            .pipe(map((obj:any) => obj)).subscribe((descuento: string) => {
+              localStorage.setItem('descuento', descuento);
+              console.log(descuento);
+            })
             if (user.isAdmin == true) {
               localStorage.setItem('admin', 'true');
               console.log('Admin encontrado')
