@@ -14,6 +14,7 @@ import { RegistroComponent } from './componentesUser/registro/registro.component
 import { ContactoComponent } from './contacto/contacto.component';
 import { LoginTelefonoComponent } from './componentesUser/login-telefono/login-telefono.component';
 import { AdminComponent } from './componentesUser/admin/admin.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,5 +34,12 @@ export const routes: Routes = [
     { path: 'telefono', component: LoginTelefonoComponent},
     { path: 'admin', component: AdminComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
-
 ];
+
+@NgModule({
+    declarations: [AppComponent, BarChartComponent],
+    imports: [RouterModule, BrowserModule],
+    exports: [RouterModule],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
