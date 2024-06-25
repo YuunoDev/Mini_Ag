@@ -39,6 +39,7 @@ export class MenuComponent implements OnInit{
     this.userService.logOut();
     localStorage.removeItem('userId');
     localStorage.removeItem('admin')
+    localStorage.removeItem('descuento')
     location.reload();
   }
 }

@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit{
         console.log(localStorage.getItem('userId'))
         for(let user of this.users){
           console.log(user.email)
-          
           if (user.email == localStorage.getItem('userId')) {
-            console.log('Dentro del if')
+            console.log(user.id)
+            localStorage.setItem('descuento',user.id)
             if (user.isAdmin == true) {
               localStorage.setItem('admin', 'true');
               console.log('Admin encontrado')
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit{
           }
         }
       }
-      location.reload();
+      // location.reload();
       this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
     })
     .catch(error => {
