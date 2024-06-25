@@ -19,6 +19,7 @@ import { QrGeneratorComponent } from './qr-generator/qr-generator.component';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { PreguntasComponent } from './preguntas/preguntas.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +40,7 @@ export const routes: Routes = [
     { path: 'admin', component: AdminComponent},
     { path: 'grafica', component: BarChartComponent},
     { path: 'qr', component: QrGeneratorComponent},
+    { path: 'preguntas', component: PreguntasComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 ];
 
