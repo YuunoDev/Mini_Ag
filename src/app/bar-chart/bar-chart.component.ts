@@ -3,15 +3,18 @@ import Chart, { ChartType } from 'chart.js/auto';
 import { Datos } from '../datos/datos.model';
 import { UserService } from '../user.service';
 import { CommonModule } from '@angular/common';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss'],
+  imports: [ NgxLoadingModule ],
   standalone: true
 })
 export class BarChartComponent implements OnInit {
 
+  public loading = false;
 
   bmw?: any;
   audi?: any;
@@ -31,6 +34,7 @@ export class BarChartComponent implements OnInit {
   constructor(private userService: UserService){}
 
   async ngOnInit(){
+    this.loading=true;
     this.bmw = await this.userService.contarCitas('BMW');
     this.audi = await this.userService.contarCitas('Audi');
     this.mercedes = await this.userService.contarCitas('Mercedes');
@@ -41,6 +45,7 @@ export class BarChartComponent implements OnInit {
     this.hyundai = await this.userService.contarCitas('Hyundai');
     this.honda = await this.userService.contarCitas('Honda');
     this.kia = await this.userService.contarCitas('Kia');
+    this.loading=false;
     this.generateChart();
   }
 
@@ -100,7 +105,7 @@ export class BarChartComponent implements OnInit {
             y: {
               title: {
                 display: true,
-                text: 'Citas'
+                text: 'Citas Totales'
               }
             }
           }
