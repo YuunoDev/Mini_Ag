@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPhoneNumber, RecaptchaVerifier, authState} from '@angular/fire/auth';
-import { Firestore, deleteDoc,addDoc, doc, collection, collectionData, where, query, getDocs, getDoc } from '@angular/fire/firestore';
+import { Firestore, deleteDoc,addDoc, doc, collection, collectionData, where, query, getDocs, getDoc, setDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { user } from './user.interface';
 import { Datos } from './datos/datos.model';
@@ -73,8 +73,22 @@ export class UserService {
     return !!localStorage.getItem('admin');
   }
 
-  addCita(dato:Datos){
+  async addCita(dato:Datos){
     const citasRef = collection(this.firestore, 'citas');
+    const autoRef = doc(this.firestore, 'autos', dato.marca);
+    const autoSnap = await getDoc(autoRef);
+    let auto: any;
+    if (autoSnap.exists()) {
+       auto = autoSnap.data();
+    }else{
+      console.log('No se encontro el modelo')
+    }
+    const citas = auto.citas + 1;
+    console.log(citas)
+    updateDoc(autoRef, {
+      citas: citas
+    })  
+
     return addDoc(citasRef, dato);
   }
 

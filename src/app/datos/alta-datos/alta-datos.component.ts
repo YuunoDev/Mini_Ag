@@ -120,8 +120,11 @@ export class AltaDatosComponent implements OnInit
     this.dato.precio=this.precio;
     this.dato.fecha = this.formCita.value.fecha
     let fecha = new Date(this.formCita.value.fecha)
-    fecha.setDate(this.formCita.value.fecha + 1)
+    console.log(fecha)
+    fecha.setDate(fecha.getDate() + 1)
+    console.log(fecha)
     this.dato.date = Timestamp.fromDate(fecha)
+    console.log(this.dato.date)
     this.dato.hora = this.formCita.value.hora
     this.dato.nombre = this.formCita.value.nombre
     this.dato.telefono = this.formCita.value.telefono
@@ -157,14 +160,6 @@ export class AltaDatosComponent implements OnInit
     .catch(error => console.log(error));
     
   }
-
-  // nuevoCliente():void{
-  //   this.openDialog();
-  //   if (this.checkArray()==true) {
-  //     this.datosService.agregarDatos(this.dato);
-  //   }
-  //   this.dato = this.datosService.nuevoCliente();
-  // }
 
   selected = new FormControl('valid', [Validators.required]);
 
