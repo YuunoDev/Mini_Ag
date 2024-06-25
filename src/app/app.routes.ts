@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CarslComponent } from './carsl/carsl.component';
 import { UncarComponent } from './uncar/uncar.component';
@@ -16,6 +16,9 @@ import { LoginTelefonoComponent } from './componentesUser/login-telefono/login-t
 import { AdminComponent } from './componentesUser/admin/admin.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { QrGeneratorComponent } from './qr-generator/qr-generator.component';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,3 +41,4 @@ export const routes: Routes = [
     { path: 'qr', component: QrGeneratorComponent},
     { path: '**', pathMatch: 'full' ,redirectTo: 'home' }
 ];
+

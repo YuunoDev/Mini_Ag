@@ -1,30 +1,59 @@
 import { Component, OnInit } from '@angular/core';
 import Chart, { ChartType } from 'chart.js/auto';
+import { Datos } from '../datos/datos.model';
+import { UserService } from '../user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-bar-chart',
   templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.scss']
+  styleUrls: ['./bar-chart.component.scss'],
+  standalone: true
 })
 export class BarChartComponent implements OnInit {
+
+
+  bmw?: any;
+  audi?: any;
+  mercedes?: any;
+  toyota?: any;
+  ford?: any;
+  chevrolet?: any;
+  nissan?: any;
+  hyundai?: any;
+  honda?: any;
+  kia?: any;
 
   // Atributo que almacena los datos del chart
   public chart?: Chart;
   public tableData: { consola: string, value: number }[] = [];
 
-  ngOnInit(): void {
-    this.generateRandomData();
+  constructor(private userService: UserService){}
+
+  async ngOnInit(){
+    this.bmw = await this.userService.contarCitas('BMW');
+    this.audi = await this.userService.contarCitas('Audi');
+    this.mercedes = await this.userService.contarCitas('Mercedes');
+    this.toyota = await this.userService.contarCitas('Toyota');
+    this.ford = await this.userService.contarCitas('Ford');
+    this.chevrolet = await this.userService.contarCitas('Chevrolet');
+    this.nissan = await this.userService.contarCitas('Nissan');
+    this.hyundai = await this.userService.contarCitas('Hyundai');
+    this.honda = await this.userService.contarCitas('Honda');
+    this.kia = await this.userService.contarCitas('Kia');
+    this.generateChart();
   }
 
-  generateRandomData(): void {
-    const labels = ['Xbox', 'Playstation', 'Switch', 'Arcades', 'PC', 'Laptops', 'NES'];
-    const data = labels.map(() => Math.floor(Math.random() * 250000));
-    this.tableData = labels.map((consola, index) => ({ consola, value: data[index] }));
+
+  generateChart(): void {
+    const labels = ['BMW', 'Audi', 'Mercedes', 'Toyota', 'Ford', 'Chevrolet', 'Nissan', 'Hyundai', 'Honda', 'Kia'];
+    let data = [this.bmw.citas, this.audi.citas, this.mercedes.citas, this.toyota.citas, 
+        this.ford.citas, this.chevrolet.citas, this.nissan.citas, this.hyundai.citas, this.honda.citas, this.kia.citas]
 
     const chartData = {
       labels: labels,
       datasets: [{
-        label: 'Datos Aleatorios',
+        label: 'Citas',
         data: data,
         backgroundColor: [
           'rgba(14 122 13)',
@@ -47,7 +76,6 @@ export class BarChartComponent implements OnInit {
         borderWidth: 1
       }]
     };
-    
     if (this.chart) {
       this.chart.data = chartData;
       this.chart.update();
@@ -59,20 +87,20 @@ export class BarChartComponent implements OnInit {
           plugins: {
             title: {
               display: true,
-              text: 'Gráfica de Barras - Tiempo de conexion de jugadores'
+              text: 'Gráfica de Barras - Citas Por Auto'
             },
           },
           scales: {
             x: {
               title: {
                 display: true,
-                text: 'Consolas'
+                text: 'Auto'
               }
             },
             y: {
               title: {
                 display: true,
-                text: 'Jugadores conectados'
+                text: 'Citas'
               }
             }
           }

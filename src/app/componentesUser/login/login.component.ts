@@ -65,13 +65,15 @@ export class LoginComponent implements OnInit{
           }
         }
       }
-      // location.reload();
       this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
+      setTimeout(function(){
+        console.log("Delayed for 1 second.");
+        location.reload()
+      }, 1000);
     })
     .catch(error => {
       console.log(error);
       this.toastr.error('Correo o contraseña incorrectos', 'Error');
     });
   }
-
 }

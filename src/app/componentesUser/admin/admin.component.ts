@@ -3,12 +3,13 @@ import { ReporteCitasPreviasComponent } from '../../datos/reporte-citas-previas/
 import { ReporteCitasProximasComponent } from '../../datos/reporte-citas-proximas/reporte-citas-proximas.component';
 import { ReporteUsuariosComponent } from '../../datos/reporte-usuarios/reporte-usuarios.component';
 import { CommonModule } from '@angular/common';
+import { BarChartComponent } from '../../bar-chart/bar-chart.component';
 
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [ReporteCitasPreviasComponent, ReporteCitasProximasComponent, ReporteUsuariosComponent,CommonModule],
+  imports: [ReporteCitasPreviasComponent, ReporteCitasProximasComponent, ReporteUsuariosComponent, BarChartComponent, CommonModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
