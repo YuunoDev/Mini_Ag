@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit{
       setTimeout(function(){
         console.log("Delayed for 1 second.");
         location.reload()
-      }, 1000);
+      }, 1500);
     })
     .catch(error => {
       console.log(error);
