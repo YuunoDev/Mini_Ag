@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../cars.service';
 import { DomseguroPipe } from '../domseguro.pipe';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { Car } from '../car';
 import { LayoutmanComponent } from '../layoutman/layoutman.component';
 import { AfterViewInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DomseguroPipe, RouterOutlet, LayoutmanComponent,RouterModule,FormsModule,CommonModule],
+  imports: [DomseguroPipe, RouterOutlet, LayoutmanComponent, RouterModule ,FormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
