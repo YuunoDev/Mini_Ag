@@ -2,7 +2,7 @@
     margin: 20px auto;
     max-width: 800px; /* Ancho máximo del contenedor */
     padding: 20px;
-    background-color: #f9f9f9; /* Color de fondo */
+    background-color: #4f8aa5; /* Color de fondo */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   }
@@ -30,7 +30,7 @@
   }
   
   .table th {
-    background-color: #4CAF50; /* Color de fondo del encabezado */
+    background-color: #0b817f; /* Color de fondo del encabezado */
     color: white; /* Color del texto del encabezado */
   }
   
@@ -67,4 +67,3 @@
   .button:hover {
     background-color: #c82333; /* Color de fondo más oscuro al hacer hover */
   }
-  
