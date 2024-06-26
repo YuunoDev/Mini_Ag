@@ -37,3 +37,22 @@ form {
   .btn-primary:hover {
     background-color: #00b3a7; /* Color de fondo más oscuro al hacer hover */
   }
+.feedback-comment {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f0f8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #333;
+  }
+  
+  .feedback-comment p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #2c3e50; /* Color del texto */
+    font-weight: 600; /* Peso de la fuente */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra del texto */
+  }
