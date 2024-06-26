@@ -32,7 +32,7 @@ export class LoginTelefonoComponent implements OnInit{
     .then(response => {
       console.log(response);
       localStorage.setItem('userId', this.formTelefono.controls['telefono'].value);
-      location.reload();
+      // location.reload();
       this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
     })
     .catch(error => console.log(error));

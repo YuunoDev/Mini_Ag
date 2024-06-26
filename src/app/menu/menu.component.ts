@@ -40,6 +40,6 @@ export class MenuComponent implements OnInit{
     localStorage.removeItem('userId');
     localStorage.removeItem('admin')
     localStorage.removeItem('descuento')
-    location.reload();
+    // location.reload();
   }
 }
