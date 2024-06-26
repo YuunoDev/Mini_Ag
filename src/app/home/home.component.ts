@@ -19,7 +19,7 @@ export class HomeComponent implements AfterViewInit, OnInit{
   ourCars: Car[]= [];
   video: string= '';
   private readonly MIN_FONT_SIZE: number = 14; // tamaño de fuente mínimo
-  private readonly MAX_FONT_SIZE: number = 36; // tamaño de fuente máximo
+  private readonly MAX_FONT_SIZE: number = 32; // tamaño de fuente máximo
   private readonly MAX_WORD_SPACING: number = 20; // espaciado máximo entre palabras
   private synth = window.speechSynthesis;
   private utterance: SpeechSynthesisUtterance;
