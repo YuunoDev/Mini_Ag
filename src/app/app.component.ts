@@ -4,7 +4,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AltaDatosComponent } from './datos/alta-datos/alta-datos.component';
 import { ReporteCitasPreviasComponent } from './datos/reporte-citas-previas/reporte-citas-previas.component';
 import { LayoutmanComponent } from './layoutman/layoutman.component';
-
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +15,5 @@ import { LayoutmanComponent } from './layoutman/layoutman.component';
 })
 export class AppComponent {
   title = 'DriverRent';
+  apiUrl = environment.apiUrl;
 }

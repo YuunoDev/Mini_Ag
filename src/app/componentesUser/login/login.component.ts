@@ -7,6 +7,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -53,7 +54,7 @@ export class LoginComponent implements OnInit{
             const email = {
               correo: user.email
             }
-            this.http.post('http://localhost:3000/database', email)
+            this.http.post(environment.apiUrl+'/database', email)
             .pipe(map((obj:any) => obj)).subscribe((descuento: string) => {
               localStorage.setItem('descuento', descuento);
               console.log(descuento);

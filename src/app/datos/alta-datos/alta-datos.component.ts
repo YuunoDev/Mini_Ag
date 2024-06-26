@@ -25,6 +25,7 @@ import { UserService } from '../../user.service';
 import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Timestamp } from '@angular/fire/firestore';
+import { environment } from '../../../environments/environment';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -150,7 +151,7 @@ export class AltaDatosComponent implements OnInit
                + 'Total de la renta: ' + (this.precio*parseInt(this.dato.dias)) + " dolares",
         correo: this.dato.correo
       }
-      this.http.post('http://localhost:3000/cita', correoCita)
+      this.http.post(environment.apiUrl+'/cita', correoCita)
       .subscribe(response => {
         console.log('Correo enviado', response);
       }, error => {

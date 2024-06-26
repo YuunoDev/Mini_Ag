@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contacto',
@@ -23,7 +24,7 @@ export class ContactoComponent {
 
    async onSubmit(){
     console.log('Submit llamado')
-    this.http.post('http://localhost:3000/contacto', this.formCont.value).subscribe(response => {
+    this.http.post(environment.apiUrl+'/contacto', this.formCont.value).subscribe(response => {
       console.log('Correo enviado', response);
     }, error => {
       console.log('Error al enviar el correo', error);
