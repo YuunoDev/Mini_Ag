@@ -1,3 +1,43 @@
 .boton{
     background-color: #948383 !important;
 }
+
+.btn-group {
+    justify-content: center;
+    margin-left: 33%;
+    margin-top: 3%;
+  }
+  
+  .btn {
+    background-color: #4CAF50; /* Verde opaco */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #45a049; /* Verde más oscuro al hacer hover */
+  }
+  
+  .btn:focus {
+    outline: none; /* Elimina el contorno al enfocar */
+  }
+  
+  .btn-primary {
+    background-color: #4CAF50; /* Verde opaco para el fondo */
+    border-color: #4CAF50; /* Borde del mismo color que el fondo */
+  }
+  
+  .btn-primary:hover {
+    background-color: #45a049; /* Verde más oscuro al hacer hover */
+    border-color: #45a049; /* Borde más oscuro al hacer hover */
+  }
+  

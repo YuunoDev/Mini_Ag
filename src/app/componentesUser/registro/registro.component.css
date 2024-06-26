@@ -1,0 +1,67 @@
+.formulario {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+    margin-top: 4px;
+    font-size: 14px;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:disabled {
+    background-color: #6c757d; /* Color gris cuando el botón está deshabilitado */
+    cursor: not-allowed;
+  }
+  
+  input[type="submit"]:hover:not(:disabled) {
+    background-color: #0056b3; /* Color más oscuro al hacer hover */
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  

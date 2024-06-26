@@ -6,16 +6,62 @@
     <div class="panel-body">
       <p>Tu viaje, tu elección: Reserva con confianza</p>
     </div>
+    <button class="btn btn-secondary ml-auto" [ngClass]="{ 'active': isSubmenuVisible }" (click)="toggleSubmenu()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" h="widt24x"p fill="#e8eaed"><path d="M480-800q-33 0-56.5-23.5T400-880q0-33 23.5-56.5T480-960q33 0 56.5 23.5T560-880q0 33-23.5 56.5T480-800ZM360-200v-480q-60-5-122-15t-118-25l20-80q78 21 166 30.5t174 9.5q86 0 174-9.5T820-800l20 80q-56 15-118 25t-122 15v480h-80v-240h-80v240h-80ZM320 0q-17 0-28.5-11.5T280-40q0-17 11.5-28.5T320-80q17 0 28.5 11.5T360-40q0 17-11.5 28.5T320 0Zm160 0q-17 0-28.5-11.5T440-40q0-17 11.5-28.5T480-80q17 0 28.5 11.5T520-40q0 17-11.5 28.5T480 0Zm160 0q-17 0-28.5-11.5T600-40q0-17 11.5-28.5T640-80q17 0 28.5 11.5T680-40q0 17-11.5 28.5T640 0Z"/></svg></button>
+    <div class="sidebar" [ngClass]="{ 'active': isSubmenuVisible }">
+      <ul>
+        <li><div class="lect">Lector de pantalla<br>
+          <button class="repro" (click)="speak()"><svg width="44px" height="44px" viewBox="0 0 104 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+            <title>42-multimeda-play</title>
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="3.Multimedia" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                <g id="Multimedia-(Monochrome)" transform="translate(-298.000000, -903.000000)" stroke="#1565C0" stroke-width="3.5">
+                    <g id="42-multimeda-play" transform="translate(300.000000, 905.000000)">
+                        <circle id="Layer-1" fill="#E2F3FB" cx="50" cy="50" r="50"></circle>
+                        <polygon id="Layer-2" fill="#FFFFFF" points="68.2890625 50 40 70 40 30"></polygon>
+                    </g>
+                </g>
+            </g>
+        </svg></button>
+          <button class="stop" (click)="stopSpeak()"><svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="54px" height="54px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+            <rect fill="none" width="24" height="24"></rect>
+            <g>
+              <path d="M50,11.881C28.947,11.881,11.88,28.947,11.88,50c0,21.053,17.067,38.119,38.119,38.119c21.053,0,38.12-17.066,38.12-38.119
+                C88.119,28.947,71.053,11.881,50,11.881z M50,82.673c-18.045,0-32.674-14.628-32.674-32.673c0-18.045,14.628-32.674,32.674-32.674
+                S82.674,31.955,82.674,50C82.674,68.045,68.045,82.673,50,82.673z"></path>
+              <g>
+                <path d="M46.369,62.783c0,1.712-1.387,3.1-3.099,3.1h-1.516c-1.712,0-3.1-1.388-3.1-3.1V37.216c0-1.712,1.388-3.099,3.1-3.099
+                  h1.516c1.712,0,3.099,1.387,3.099,3.099V62.783z"></path>
+                <path d="M61.344,62.783c0,1.712-1.387,3.1-3.098,3.1H56.73c-1.713,0-3.101-1.388-3.101-3.1V37.216
+                  c0-1.712,1.388-3.099,3.101-3.099h1.516c1.711,0,3.098,1.387,3.098,3.099V62.783z"></path>
+              </g>
+            </g>
+            </svg></button></div></li>
+        <li><button class="btn btn-secondary boton" (click)="increaseFontSize()">Aumentar tamaño</button></li>
+        <li><button class="btn btn-secondary boton" (click)="decreaseFontSize()">Disminuir tamaño</button>
+        <li><button class="btn btn-warning boton" (click)="increaseWordSpacing()">Aumentar espaciado</button></li>
+        <div class="container">
+          <button class="Resal" (click)="toggleLineFocus()">
+            {{ lineFocusEnabled ? 'Desactivar' : 'Activar' }} Resaltado de Línea
+          </button>
+          <div class="line-container" *ngIf="lineFocusEnabled">
+            <div class="line" [style.top.px]="lineY"></div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
   </div>
 
   <div class="info">
     <div class="container text-center">
       <div class="row row-cols-2">
         <div class="col-12">
-          <div class="p-3 info-title">DriveRent</div>
+          <div class="p-3 info-title"  >DriveRent</div>
         </div>
         <div class="col-12">
-          <div class="p-3 info-text"> una innovadora plataforma que ofrece un enfoque único para satisfacer sus
+          <div class="p-3 info-text" id="texto" #texto> Una innovadora plataforma que ofrece un enfoque único para satisfacer sus
             necesidades de transporte. Como empresa líder en el alquiler de coches con conductor, nos enorgullece
             ofrecer un servicio excepcional que combina la comodidad del alquiler de vehículos
             con la tranquilidad de contar con un conductor profesional a su disposición. Nuestro servicio Driverent le
@@ -136,6 +182,9 @@
     </div>
   </div>
   <br>
-</div>
+
+
+
+
 
 
