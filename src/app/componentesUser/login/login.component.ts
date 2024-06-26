@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit{
         console.log(localStorage.getItem('userId'))
         for(let user of this.users){
           console.log(user.email)
-          if (user.email == localStorage.getItem('userId')) {
+          if (user.email.toLowerCase() == localStorage.getItem('userId')) {
             const email = {
               correo: user.email
             }
@@ -68,8 +68,8 @@ export class LoginComponent implements OnInit{
       this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
       setTimeout(function(){
         console.log("Delayed for 1 second.");
-        location.reload()
-      }, 1500);
+        // location.reload()
+      }, 1800);
     })
     .catch(error => {
       console.log(error);
