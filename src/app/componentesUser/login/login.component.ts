@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit{
       this.toastr.success('Bienvenido ' + localStorage.getItem("userId"), 'Sesion Iniciada');
       setTimeout(function(){
         console.log("Delayed for 1 second.");
-        // location.reload()
+        location.reload()
       }, 1800);
     })
     .catch(error => {
