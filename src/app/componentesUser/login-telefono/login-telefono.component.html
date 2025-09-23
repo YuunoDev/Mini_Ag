@@ -1,0 +1,11 @@
+<div class="formulario">
+    <h4>Login por Telefono</h4>
+    <form [formGroup]="formTelefono" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Telefono</label>
+            <input type="text" class="form-control" formControlName="telefono">
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+    <div id="recaptcha-container"></div>
+</div>

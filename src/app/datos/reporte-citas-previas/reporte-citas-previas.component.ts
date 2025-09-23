@@ -1,27 +1,30 @@
 import { Component } from '@angular/core';
 import { Datos } from '../datos.model';
 import { DatosService } from '../datos.service'; 
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
+import { UserService } from '../../user.service';
+import { timestamp } from 'rxjs';
+import { Timestamp } from '@angular/fire/firestore';
 
 
 @Component({
   selector: 'app-reporte-citas-previas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, DatePipe],
   templateUrl: './reporte-citas-previas.component.html',
   styleUrl: './reporte-citas-previas.component.css'
 })
 export class ReporteCitasPreviasComponent {
   datos!: Datos[];
-  hoy: Date;
-  constructor(private datosService: DatosService) {
-    this.hoy = new Date();
+  hoydate= new Date();
+  hoy = Timestamp.fromDate(this.hoydate);
+  constructor(private datosService: DatosService, private userService: UserService) {
   }
 
   ngOnInit() {
-    this.datos = this.datosService.getDatos();
-    this.datos.forEach(item => {
-      item.date=new Date(item.fecha);
+    console.log(this.hoy)
+    this.userService.getCitas().subscribe(datos => {
+      this.datos = datos;
     })
   }
 }

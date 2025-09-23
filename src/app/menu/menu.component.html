@@ -10,28 +10,51 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="/cars" routerLinkActive="active">Carros</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Reportes
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" routerLink="/citasPrevias">Citas Previas</a></li>
-                        <li><a class="dropdown-item" href="#" routerLink="/citasProximas">Citas Proximas</a></li>
-                    </ul>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" routerLink="/marcas" routerLinkActive="active">Marcas</a>
+                    <a class="nav-link" aria-current="page" routerLink="/cars" routerLinkActive="active">Rentar</a>
                 </li>
 
                 <!-- nosotros -->
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="/preguntas" routerLinkActive="active">Preguntas Frecuentes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+                </li>
+                
+                <li class="nav-item dropdown" *ngIf="this.loggedIn; else buttonLogin">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {{this.cuenta}}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li *ngIf="this.admin"><a class="nav-link active" aria-current="page" routerLink="/admin" routerLinkActive="active">Admin</a></li>
+                        <li><a class="nav-link active" aria-current="page" routerLink="/qr" routerLinkActive="active">Descuento a Usuarios Nuevos!</a></li>
+                        <li><a class="nav-link active" aria-current="page" routerLink="/citas" routerLinkActive="active">Mis Citas</a></li>
+                        <li><a class="nav-link active" aria-current="page" (click)="logout()" routerLink="/home" routerLinkActive="active">Logout</a></li>
+                    </ul>
+                </li>
+                               
+                <ng-template #buttonLogin>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Login
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="nav-link active" aria-current="page" routerLink="/registro" routerLinkActive="active">Registrate</a></li>
+                            <li><a class="nav-link active" aria-current="page" routerLink="/login" routerLinkActive="active">Login</a></li>
+                            <li><a class="nav-link active" aria-current="page" routerLink="/telefono" routerLinkActive="active">Login con Telefono</a></li>
+                        </ul>
+                    </li>
+                </ng-template>
+                
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="busqueda por marca" aria-label="Search" #buscarTexto (keyup.enter)="buscarMarca(buscarTexto.value)"/>

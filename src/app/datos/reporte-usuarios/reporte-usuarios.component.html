@@ -1,0 +1,30 @@
+<div id="container2" style="margin-top: 40px;">
+    <h2>
+        Usuarios
+    </h2>
+    @if (!users.length) {
+        <div>No hay clientes por el momento</div>
+    }
+    @else {
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Cuenta</th>
+                        <th scope="col">Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (user of users; track users) {
+                        <tr>
+                            <td>{{user.nombre}}</td>
+                            <td>{{user.cuenta}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

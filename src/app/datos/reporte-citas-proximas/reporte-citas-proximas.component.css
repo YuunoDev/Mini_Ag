@@ -4,11 +4,11 @@
     padding: 20px; /* Añade espaciado interno al contenedor */
     border: 1px solid #ccc; /* Agrega un borde al contenedor */
     border-radius: 5px; /* Agrega esquinas redondeadas al contenedor */
-    background-color: #948383; /* Establece un color de fondo para el contenedor */
+    background-color: #3f8a6f; /* Establece un color de fondo para el contenedor */
 }
 
 h2 {
-    color: #333; /* Color del texto del encabezado */
+    color: #191919; /* Color del texto del encabezado */
     font-size: 24px; /* Tamaño de fuente del encabezado */
     margin-bottom: 20px; /* Espacio inferior del encabezado */
 }

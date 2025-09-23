@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Datos,Dias  } from './datos.model';
 import { DIAS } from '../dias';
+import { Timestamp } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,7 @@ export class DatosService {
       marca: '',
       anio:this.datos.length,
       dias: '',
-      date: new Date()
+      date: new Timestamp(0,0)
     };
    }
 }

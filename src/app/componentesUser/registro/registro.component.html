@@ -1,0 +1,33 @@
+<div class="formulario">
+    <h2>Registro de usuario</h2>
+    <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" formControlName="nombre">
+        </div>
+        <p class="text-danger" *ngIf="formReg.controls['nombre'].errors?.['required']">El nombre es requerido</p>
+        <div class="mb-3">
+            <label class="form-label">Nombre de Usuario</label>
+            <input type="text" class="form-control" formControlName="cuenta">
+        </div>
+        <p class="text-danger" *ngIf="formReg.controls['cuenta'].errors?.['required']">El nombre es requerido</p>
+        <div class="mb-3">
+            <label class="form-label">Correo Electronico</label>
+            <input type="text" class="form-control" formControlName="email">
+        </div>
+        <p class="text-danger" *ngIf="formReg.controls['email'].errors?.['required']">El correo electronico es requerido</p>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" formControlName="pass">
+            <p class="text-danger" *ngIf="formReg.controls['pass'].errors?.['required']">La contraseña es requerida</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Repita la contraseña</label>
+            <input type="password" class="form-control" formControlName="pass2">
+            <p class="text-danger" *ngIf="formReg.errors?.['passwordmatcherror']">La contraseña no concuerda</p>
+        </div>
+        <input type="submit" [disabled]="formReg.errors || formReg.controls['cuenta'].errors || formReg.controls['email'].errors || formReg.controls['pass'].errors" value="Enviar">
+    </form>
+</div>
+<br>
+<p><a class="" aria-current="page" routerLink="/login" routerLinkActive="active">Inicia sesion</a></p>

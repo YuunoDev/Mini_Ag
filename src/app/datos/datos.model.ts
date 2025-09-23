@@ -1,6 +1,8 @@
+import { Timestamp } from "@angular/fire/firestore";
+
 export interface Datos{
-    id: number;
-    fecha: string;
+  id: number;
+  fecha: string;
   hora: string;
   nombre: string;
   telefono: string;
@@ -9,9 +11,8 @@ export interface Datos{
   modelo: string;
   marca: string;
   anio: number;
-//   imagen: File | undefined;
   dias: string;
-  date: Date;
+  date: Timestamp;
 }
 
 export interface Dias{
